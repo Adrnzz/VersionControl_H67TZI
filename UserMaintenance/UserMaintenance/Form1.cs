@@ -56,5 +56,26 @@ namespace UserMaintenance
                 }
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+                if (listBox1.Items.Count >= 1)
+                {
+                    if (listBox1.SelectedValue != null)
+                    {
+                        var items = (List<User>)listBox1.DataSource;
+
+                        var item = (User)listBox1.SelectedValue;
+                        listBox1.DataSource = null;
+                        listBox1.Items.Clear();
+                        items.Remove(item);
+                        listBox1.DataSource = items;
+                    }
+                }
+                else
+                {
+                    System.Windows.Forms.MessageBox.Show("No ITEMS Found");
+                }
+        }
     }
 }
