@@ -18,7 +18,6 @@ namespace UserMaintenance
         {
             InitializeComponent();
                 lblLastName.Text = languages.LastName;
-                lblFirstName.Text = languages.FirstName;
                 btnAdd.Text = languages.Add;
             
         }
@@ -27,8 +26,7 @@ namespace UserMaintenance
         {
             var u = new User()
             {
-                LastName = txtLastName.Text,
-                FirstName = txtFirstName.Text
+                FullName = txtLastName.Text
             };
             users.Add(u);
         }
