@@ -7,18 +7,30 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using UserMaintenance.Entities;
 
 namespace UserMaintenance
 {
     public partial class Form1 : Form
     {
+        BindingList<User> users = new BindingList<User>();
         public Form1()
         {
             InitializeComponent();
                 lblLastName.Text = languages.LastName;
                 lblFirstName.Text = languages.FirstName;
                 btnAdd.Text = languages.Add;
-            }
+            
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            var u = new User()
+            {
+                LastName = txtLastName.Text,
+                FirstName = txtFirstName.Text
+            };
+            users.Add(u);
         }
     }
 }
